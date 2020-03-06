@@ -37,4 +37,7 @@ dependencies {
 
     //Add Library View Pager2
     implementation "androidx.viewpager2:viewpager2:1.0.0"
+
+    //Add Material Design
+    implementation 'com.google.android.material:material:1.1.0'
 }
