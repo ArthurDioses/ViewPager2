@@ -1,5 +1,6 @@
 package com.example.viewpager2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
@@ -45,6 +46,22 @@ class MainActivity : AppCompatActivity() {
                 setCurrentIndicator(position)
             }
         })
+        btnNext.setOnClickListener {
+            if (vpIntroSliderViewPager.currentItem + 1 < introSliderAdapter.itemCount) {
+                vpIntroSliderViewPager.currentItem += 1
+            } else {
+                Intent(applicationContext, AnotherActivity::class.java).also {
+                    startActivity(it)
+                    finish()
+                }
+            }
+        }
+        tvSkipIntro.setOnClickListener {
+            Intent(applicationContext, AnotherActivity::class.java).also {
+                startActivity(it)
+                finish()
+            }
+        }
     }
 
     private fun setupIndicator() {
